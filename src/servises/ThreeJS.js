@@ -30,7 +30,8 @@ class ThreeJSController {
       camera.updateProjectionMatrix();
     };
     renderer.shadowMap.enabled = true;
-    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    // renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    renderer.shadowMap.type = THREE.VSMShadowMap;
 
     const controls = new OrbitControls(camera, renderer.domElement);
     const textureLoader = new THREE.TextureLoader();
@@ -123,6 +124,8 @@ class ThreeJSController {
     scene.add(dirLight);
 
     dirLight.castShadow = true;
+    dirLight.shadow.radius = 7
+    dirLight.shadow.blurSamples = 12
 
     dirLight.shadow.mapSize.width = 2048;
     dirLight.shadow.mapSize.height = 2048;
