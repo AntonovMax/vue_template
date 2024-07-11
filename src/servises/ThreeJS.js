@@ -37,10 +37,10 @@ class ThreeJSController {
 
     // педестал
     const pedestalMap = textureLoader.load(
-      "./src/assets/textures/pedestal_map.jpg"
+      "textures/pedestal_map.jpg"
     );
     const pedestalRough = textureLoader.load(
-      "./src/assets/textures/pedestal_rough.jpg"
+      "textures/pedestal_rough.jpg"
     );
     const cylinderGeometry = new THREE.CylinderGeometry(10, 10.5, 1, 64);
     const cylinderMaterial = new THREE.MeshStandardMaterial({
@@ -73,20 +73,20 @@ class ThreeJSController {
     const gltfLoader = new GLTFLoader();
 
     const diff = textureLoader.load(
-      "./src/assets/textures/wood_table_001_diff_4k.jpg"
+      "textures/wood_table_001_diff_4k.jpg"
     );
     diff.wrapS = THREE.RepeatWrapping;
     diff.wrapT = THREE.RepeatWrapping;
     diff.repeat.set(4, 4);
 
     const roughness = textureLoader.load(
-      "./src/assets/textures/wood_table_001_rough_4k.jpg"
+      "textures/wood_table_001_rough_4k.jpg"
     );
     roughness.wrapS = THREE.RepeatWrapping;
     roughness.wrapT = THREE.RepeatWrapping;
     roughness.repeat.set(4, 4);
 
-    gltfLoader.load("./src/assets/door.glb", (model) => {
+    gltfLoader.load("door.glb", (model) => {
       const geometry = model.scene.children[0].geometry;
       const material = new THREE.MeshStandardMaterial({
         map: diff,
@@ -109,7 +109,7 @@ class ThreeJSController {
 
     // окружение
     const hdriLoader = new RGBELoader();
-    hdriLoader.load("./src/assets/environment.hdr", function (texture) {
+    hdriLoader.load("environment.hdr", function (texture) {
       texture.mapping = THREE.EquirectangularReflectionMapping;
       scene.background = texture;
       scene.environment = texture;
