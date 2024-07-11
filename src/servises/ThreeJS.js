@@ -133,7 +133,12 @@ class ThreeJSController {
     dirLight.shadow.mapSize.width = 512;
     dirLight.shadow.mapSize.height = 512;
     dirLight.shadow.camera.near = 0.5;
-    dirLight.shadow.camera.far = 500;
+    dirLight.shadow.camera.far = 1500;
+    dirLight.shadow.camera.top = 10
+    dirLight.shadow.camera.bottom = -10
+    dirLight.shadow.camera.left = -10
+    dirLight.shadow.camera.right = 10
+
 
     // const helper = new THREE.DirectionalLightHelper( dirLight, 5 );
     // scene.add( helper );
